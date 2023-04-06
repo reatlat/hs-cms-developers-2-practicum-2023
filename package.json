@@ -1,0 +1,32 @@
+{
+  "name": "hubspot-client-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "fetch": "npx hs fetch --account=1234567890 --overwrite / ./hubspot",
+    "push": "npx hs upload --account=1234567890 ./hubspot /",
+    "watch": "npx hs watch --account=1234567890 ./hubspot /"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnypixels-io/hubspot-client-template.git"
+  },
+  "author": {
+    "name": "Alex Zappa",
+    "email": "alex@sunnypixels.io",
+    "url": "https://sunnypixels.io"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sunnypixels-io/hubspot-client-template/issues"
+  },
+  "homepage": "https://github.com/sunnypixels-io/hubspot-client-template#readme",
+  "devDependencies": {
+    "@hubspot/cli": "^4.1.3"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
