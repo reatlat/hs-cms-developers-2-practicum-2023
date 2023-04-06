@@ -1,0 +1,34 @@
+{% for item in module.member %}
+	{% if item.photo.src %}
+		{% set sizeAttrs = 'width="{{ item.photo.width }}" height="{{ item.photo.height }}"' %}
+		{% if item.photo.size_type == 'auto' %}
+			{% set sizeAttrs = 'width="{{ item.photo.width }}" height="{{ item.photo.height }}" style="max-width: 100%; height: auto;"' %}
+		{% elif item.photo.size_type == 'auto_custom_max' %}
+			{% set sizeAttrs = 'width="{{ item.photo.max_width }}" height="{{ item.photo.max_height }}" style="max-width: 100%; height: auto;"' %}
+		{% endif %}
+		 {% set loadingAttr = item.photo.loading != 'disabled' ? 'loading="{{ item.photo.loading }}"' : '' %}
+		<img src="{{ item.photo.src }}" alt="{{ item.photo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+	{% endif %}
+	{% inline_text field="full_name" value="{{ item.full_name }}" %}
+	{% inline_text field="job_title" value="{{ item.job_title }}" %}
+{% endfor %}
+
+
+
+{{ module.style.textalignment_field }}
+
+
+{{ module.style.card_border }}
+
+
+{{ module.style.bg_color.color }}
+{{ module.style.bg_color.opacity }}
+
+
+
+{{ module.style.text_color.color }}
+{{ module.style.text_color.opacity }}
+
+
+
+

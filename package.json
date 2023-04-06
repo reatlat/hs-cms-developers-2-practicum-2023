@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "fetch": "npx hs fetch --overwrite / ./hubspot/AlexZappa_April2023",
+    "fetch": "npx hs fetch --overwrite /AlexZappa_April2023 ./hubspot/AlexZappa_April2023",
     "push": "npx hs upload ./hubspot/AlexZappa_April2023 /AlexZappa_April2023",
     "watch": "npx hs watch ./hubspot/AlexZappa_April2023 /AlexZappa_April2023"
   },

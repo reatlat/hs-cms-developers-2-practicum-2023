@@ -1,0 +1,264 @@
+[ {
+  "id" : "8a974668-bef5-79a4-ad49-7705b0a6597a",
+  "name" : "style",
+  "display_width" : null,
+  "label" : "Style",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "e3177a0f-b049-5755-b6e9-3580079608f2",
+    "name" : "textalignment_field",
+    "display_width" : null,
+    "label" : "Text alignment",
+    "required" : false,
+    "locked" : false,
+    "type" : "textalignment",
+    "default" : {
+      "text_align" : "LEFT"
+    }
+  }, {
+    "id" : "de45a782-19ae-572e-bd01-d7bdc87b7c49",
+    "name" : "card_border",
+    "display_width" : null,
+    "label" : "Card Border",
+    "required" : false,
+    "locked" : false,
+    "allow_custom_border_sides" : false,
+    "type" : "border",
+    "default" : {
+      "top" : {
+        "style" : "none"
+      },
+      "bottom" : {
+        "style" : "none"
+      },
+      "left" : {
+        "style" : "none"
+      },
+      "right" : {
+        "style" : "none"
+      }
+    }
+  }, {
+    "id" : "3d3f40b5-0ae9-a28a-29f2-f71d6e4601df",
+    "name" : "bg_color",
+    "display_width" : null,
+    "label" : "BG Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }, {
+    "id" : "ce7cab0c-84c4-3be2-72b8-8d88bc782075",
+    "name" : "text_color",
+    "display_width" : null,
+    "label" : "Text Color",
+    "required" : false,
+    "locked" : false,
+    "type" : "color",
+    "default" : {
+      "color" : null,
+      "opacity" : null
+    }
+  } ],
+  "tab" : "STYLE",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "textalignment_field" : {
+      "text_align" : "LEFT"
+    },
+    "card_border" : {
+      "top" : {
+        "style" : "none"
+      },
+      "bottom" : {
+        "style" : "none"
+      },
+      "left" : {
+        "style" : "none"
+      },
+      "right" : {
+        "style" : "none"
+      }
+    },
+    "bg_color" : {
+      "color" : null,
+      "opacity" : null
+    },
+    "text_color" : {
+      "color" : null,
+      "opacity" : null
+    }
+  }
+}, {
+  "id" : "2f3327a1-b1ad-6470-fad1-40a3abe0acc2",
+  "name" : "member",
+  "display_width" : null,
+  "label" : "Member",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 1,
+    "max" : null,
+    "sorting_label_field" : "5fd189b7-abda-ae72-6e5d-b4769e9916b7",
+    "default" : 8
+  },
+  "children" : [ {
+    "id" : "91d91c9a-7a59-d938-22fa-287e962b5822",
+    "name" : "photo",
+    "display_width" : null,
+    "label" : "Photo",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    }
+  }, {
+    "id" : "5fd189b7-abda-ae72-6e5d-b4769e9916b7",
+    "name" : "full_name",
+    "display_width" : null,
+    "label" : "Full Name",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "John Doe"
+  }, {
+    "id" : "6f099d01-4c90-3c44-3e3b-a24269f75ded",
+    "name" : "job_title",
+    "display_width" : null,
+    "label" : "Job Title",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Sr. Sleep Expert"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : true,
+  "type" : "group",
+  "default" : [ {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  }, {
+    "photo" : {
+      "size_type" : "auto",
+      "src" : "https://27196719.fs1.hubspotusercontent-eu1.net/hubfs/27196719/assets/cats/cat_00011.jpg",
+      "alt" : "cat_00011",
+      "loading" : "lazy",
+      "width" : 900,
+      "height" : 900,
+      "max_width" : 900,
+      "max_height" : 900
+    },
+    "full_name" : "John Doe",
+    "job_title" : "Sr. Sleep Expert"
+  } ]
+} ]
