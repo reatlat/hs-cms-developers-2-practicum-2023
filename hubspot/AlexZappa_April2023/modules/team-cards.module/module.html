@@ -1,34 +1,62 @@
-{% for item in module.member %}
-	{% if item.photo.src %}
-		{% set sizeAttrs = 'width="{{ item.photo.width }}" height="{{ item.photo.height }}"' %}
-		{% if item.photo.size_type == 'auto' %}
-			{% set sizeAttrs = 'width="{{ item.photo.width }}" height="{{ item.photo.height }}" style="max-width: 100%; height: auto;"' %}
-		{% elif item.photo.size_type == 'auto_custom_max' %}
-			{% set sizeAttrs = 'width="{{ item.photo.max_width }}" height="{{ item.photo.max_height }}" style="max-width: 100%; height: auto;"' %}
-		{% endif %}
-		 {% set loadingAttr = item.photo.loading != 'disabled' ? 'loading="{{ item.photo.loading }}"' : '' %}
-		<img src="{{ item.photo.src }}" alt="{{ item.photo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-	{% endif %}
-	{% inline_text field="full_name" value="{{ item.full_name }}" %}
-	{% inline_text field="job_title" value="{{ item.job_title }}" %}
-{% endfor %}
+{#
+ # Team Cards Module
+ # @package AlexZappa_April2023
+ #}
 
+<div id="{{ name }}" class="az-team-cards">
 
+	{% for item in module.member %}
+		<div class="az-team-card">
+			<div class="az-team-card__photo">
+				{% if item.photo.src %}
+					{% set sizeAttrs = 'width="{{ item.photo.width }}" height="{{ item.photo.height }}"' %}
+					{% if item.photo.size_type == 'auto' %}
+						{% set sizeAttrs = 'width="{{ item.photo.width }}" height="{{ item.photo.height }}" style="max-width: 100%; height: auto;"' %}
+					{% elif item.photo.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item.photo.max_width }}" height="{{ item.photo.max_height }}" style="max-width: 100%; height: auto;"' %}
+					{% endif %}
+					 {% set loadingAttr = item.photo.loading != 'disabled' ? 'loading="{{ item.photo.loading }}"' : '' %}
+					<img src="{{ item.photo.src }}" alt="{{ item.photo.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+				{% endif %}
+			</div>
+			<div class="az-team-card__details">
+				<p class="az-team-card__name">{{ item.full_name }}</p>
+				<p class="az-team-card__jobTitle">{{ item.job_title }}</p>
+			</div>
+		</div>
+	{% endfor %}
 
-{{ module.style.textalignment_field }}
+</div>
 
+{% if module.style.bg_color.color %}
+	{% set bg_color = module.style.bg_color.color %}
+	{% set bg_opacity = module.style.bg_color.opacity %}
+{% else %}
+	{% set bg_color = theme.global_colors.primary.color %}
+	{% set bg_opacity = 100 %}
+{% endif %}
 
-{{ module.style.card_border }}
+{% if module.style.text_color.color %}
+	{% set text_color = module.style.text_color.color %}
+	{% set text_opacity = module.style.text_color.opacity %}
+{% else %}
+	{% set text_color = theme.global_colors.secondary.color %}
+	{% set text_opacity = 100 %}
+{% endif %}
 
-
-{{ module.style.bg_color.color }}
-{{ module.style.bg_color.opacity }}
-
-
-
-{{ module.style.text_color.color }}
-{{ module.style.text_color.opacity }}
-
-
-
+{% require_css %}
+	<style>
+		{% scope_css %}
+		.az-team-card {
+			{{ module.style.card_border.css }}
+			background-color: {{ theme.global_colors.secondary.color }};
+		}
+		.az-team-card__details {
+			{{ module.style.textalignment_field.css }};
+			background-color: rgba({{ bg_color|convert_rgb }}, {{ bg_opacity/100 }});
+			color: rgba({{ text_color|convert_rgb }}, {{ text_opacity/100 }});
+		}
+		{% end_scope_css %}
+	</style>
+{% end_require_css %}
 

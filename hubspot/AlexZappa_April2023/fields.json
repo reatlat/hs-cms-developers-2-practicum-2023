@@ -19,7 +19,7 @@
           }
         },
         "default": {
-          "color": "#494A52"
+          "color": "#23539B"
         }
       },
       {
@@ -37,7 +37,97 @@
           }
         },
         "default": {
-          "color": "#F8FAFC"
+          "color": "#F8F9F9"
+        }
+      },
+      {
+        "label": "Tertiary",
+        "name": "tertiary",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[2]"
+          }
+        },
+        "default": {
+          "color": "#9CA0A7"
+        }
+      },
+      {
+        "label": "Accent",
+        "name": "Accent",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[3]"
+          }
+        },
+        "default": {
+          "color": "#E82B21"
+        }
+      },
+      {
+        "label": "Warning",
+        "name": "warning",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[4]"
+          }
+        },
+        "default": {
+          "color": "#F48546"
+        }
+      },
+      {
+        "label": "Highlight",
+        "name": "highlight",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[5]"
+          }
+        },
+        "default": {
+          "color": "#EF9591"
+        }
+      },
+      {
+        "label": "Body color",
+        "name": "body_color",
+        "type": "color",
+        "visibility": {
+          "hidden_subfields": {
+            "opacity": true
+          }
+        },
+        "inherited_value": {
+          "property_value_paths": {
+            "color": "brand_settings.colors[6]"
+          }
+        },
+        "default": {
+          "color": "#333333"
         }
       }
     ]

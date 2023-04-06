@@ -1,0 +1,65 @@
+/**
+ * Team Cards Module
+ * @package AlexZappa_April2023
+ */
+
+.az-team-cards {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+.az-team-card {
+    position: relative;
+}
+
+.az-team-card__photo {
+    display: grid;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+}
+
+.az-team-card__photo img {
+    object-fit: cover; /* scale image to fill container */
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    line-height: 0; /* prevent extra space below image */
+}
+
+.az-team-card__details {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 3px 0;
+}
+
+.az-team-card__details p {
+    margin: 0;
+    padding: 2px 6px;
+}
+
+.az-team-card__name {
+    font-size: 1.25em;
+}
+
+@media (min-width: 491px) {
+    .az-team-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (min-width: 768px) {
+    .az-team-cards {
+        gap: 40px;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (min-width: 991px) {
+    .az-team-cards {
+        gap: 40px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
