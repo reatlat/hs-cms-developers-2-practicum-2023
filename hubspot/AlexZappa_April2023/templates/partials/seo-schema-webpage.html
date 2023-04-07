@@ -1,0 +1,30 @@
+<!--
+  templateType: global_partial
+  label: SEO Schema Markup for Blog Posts
+-->
+{#
+    In theory we cna grab all info using HubL but some fields not exist and
+    I usual just set it for each client individually
+#}
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "{{content.name|safe|striptags}}",
+        "image": "{{ content.featured_image || get_asset_url('https://source.unsplash.com/1280x720/?bee') }}",
+        "author": {
+            "@type": "{{ 'Organization' || 'Person' }}",
+            "name": "{{content.blog_post_author.display_name}}"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "My Company name",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://source.unsplash.com/1280x720/?bee"
+            }
+        },
+        "datePublished": "{{ content.publish_date }}"
+    }
+</script>

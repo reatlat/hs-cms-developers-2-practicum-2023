@@ -1,0 +1,90 @@
+<!--
+  templateType: section
+  label: Clients
+  isAvailableForNewContent: true
+  screenshotPath: ../images/section-previews/clients.png
+  description: "Full size background color section separated in three columns with a linked image and rich text module."
+-->
+{% dnd_section
+    background_color={{ context.background_color or "#f8fafc" }},
+    vertical_alignment="TOP"
+%}
+    {% dnd_column
+        offset=0,
+        width=4
+    %}
+        {% dnd_row %}
+            {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                "alt": context.column_one_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+                "loading": context.column_one_image_loading or "lazy",
+                "max_height": context.column_one_image_height or 451,
+                "max_width": context.column_one_image_width or 605,
+                "size_type": "auto_custom_max",
+                "src": context.column_one_image or get_asset_url("../images/grayscale-mountain.png")
+            }
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+            {% dnd_module
+                path="@hubspot/rich_text",
+                html={{ context.column_one_content or "<h3>We don’t serve their kind here!</h3><p>What? Your droids. They’ll have to wait outside. We don’t want them here. Listen, why don’t you wait out by the speeder. We don’t want any trouble. I heartily agree with you sir. Negola dewaghi wooldugger?!? He doesn’t like you. I’m sorry. I don’t like you either You just watch yourself. We’re wanted men. I have the death sentence in twelve systems....</p>" }}
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column
+        offset=4,
+        width=4
+    %}
+        {% dnd_row %}
+            {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                "alt": context.column_two_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+                "loading": context.column_two_image_loading or "lazy",
+                "max_height": context.column_two_image_height or 451,
+                "max_width": context.column_two_image_width or 605,
+                "size_type": "auto_custom_max",
+                "src": context.column_two_image or get_asset_url("../images/grayscale-mountain.png")
+            }
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+            {% dnd_module
+                path="@hubspot/rich_text",
+                html={{ context.column_two_content or "<h3>The approach will not be easy.</h3><p>You are required to maneuver straight down this trench and skim the surface to this point. The target area is only two meters wide. It’s a small thermal exhaust port, right below the main port. The shaft leads directly to the reactor system. A precise hit will start a chain reaction which should destroy the station. Only a precise hit will set up a...</p>" }}
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+    {% end_dnd_column %}
+    {% dnd_column
+        offset=8,
+        width=4
+    %}
+        {% dnd_row %}
+            {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                "alt": context.column_three_image_alt or "Stock placeholder image with grayscale geometrical mountain landscape",
+                "loading": context.column_three_image_loading or "lazy",
+                "max_height": context.column_three_image_height or 451,
+                "max_width": context.column_three_image_width or 605,
+                "size_type": "auto_custom_max",
+                "src": context.column_three_image or get_asset_url("../images/grayscale-mountain.png")
+            }
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+        {% dnd_row %}
+            {% dnd_module
+                path="@hubspot/rich_text",
+                html={{ context.column_three_content or "<h3>Come in, Threepio!</h3><p>Threepio! Get to the top! I can’t Where could he be? Threepio! Threepio, will you come in? They aren’t here! Something must have happened to them. See if they’ve been captured. Hurry! One thing’s for sure. We’re all going to be a lot thinner! Get on top of it! I’m trying! Thank goodness, they haven’t found them! Where could they be? Use the comlink? Oh, my!...</p>" }}
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_row %}
+    {% end_dnd_column %}
+{% end_dnd_section %}

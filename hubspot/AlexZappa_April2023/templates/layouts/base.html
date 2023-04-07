@@ -13,11 +13,16 @@
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}
     {% endif %}
+    {% include "../partials/seo-schema-organization.html" %}
     {{ require_css(get_asset_url("../../css/theme-overrides.css")) }}
     {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
     {{ standard_header_includes }}
   </head>
   <body>
+    {% block hs_body_open %}
+      {# We can pass any scritps to the head, using this hook #}
+    {% endblock hs_body_open %}
+
     <div class="body-wrapper {{ builtin_body_classes }}">
       {% block header %}
         {% global_partial path="../partials/header.html" %}

@@ -1,0 +1,39 @@
+<!--
+  templateType: global_partial
+  label: Schema Markup for Organization
+-->
+{#
+    In theory we cna grab all info using HubL but some fields not exist and
+    I usual just set it for each client individually
+#}
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "@id": "{{brand_settings.primaryLogo.link}}#organization",
+        "name": "SunnyPixels",
+        "description": "Once Upon a Time",
+        "url": "{{brand_settings.primaryLogo.link}}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "{{site_settings.company_country}}",
+            "addressLocality": "{{site_settings.company_city}}",
+            "addressRegion": "{{site_settings.company_state}}",
+            "postalCode": "{{site_settings.company_zip_code}}",
+            "streetAddress": "{{site_settings.company_street_address_1}}"
+        },
+        "foundingDate": "1986",
+        "legalName": "{{site_settings.company_name}}",
+        "logo": "{{brand_settings.primaryLogo.src}}",
+        "founders": [
+            {
+                "@type": "Person",
+                "name": "Alex Zappa"
+            }
+        ],
+        "sameAs": [
+            "https://www.linkedin.com/reatlat/",
+            "https://twitter.com/reatlat"
+        ]
+    }
+</script>

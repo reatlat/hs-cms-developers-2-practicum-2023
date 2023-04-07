@@ -1,0 +1,52 @@
+<!--
+  templateType: global_partial
+  label: SEO Schema Markup for Blog Posts
+-->
+{#
+    In theory we cna grab all info using HubL but some fields not exist and
+    I usual just set it for each client individually
+#}
+
+{% if topic %}
+    {% set schema_link_id = "https://blog.27196719.hs-sites-eu1.com/tag/{{ topic|first|safe|replace(' ', '-')|lower }}" %}
+    {% set schema_link_name = topic|first|safe|striptags %}
+    {% elif blog_author or 'author' in request.path|split('/') %}
+    {% set schema_link_id = blog_author_url(group.id, blog_author.slug) %}
+    {% set schema_link_name = blog_author.display_name|safe|striptags %}
+{% else %}
+    {% set schema_link_id = "https://blog.27196719.hs-sites-eu1.com/all" %}
+    {% set schema_link_name = "All Posts" %}
+{% endif %}
+
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": {
+                "@id": "https://27196719.hs-sites-eu1.com/",
+                "name": "Home",
+                "image": "https://source.unsplash.com/1280x720/?bee"
+            }
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+                "@id": "https://blog.27196719.hs-sites-eu1.com/",
+                "name": "Blog",
+                "image": "https://source.unsplash.com/1280x720/?bee"
+            }
+        }{% if schema_link_name|length and topic or 'author' in request.path|split('/') or simple_list_page %},{
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+                "@id": "{{ schema_link_id }}",
+                "name": "{{ schema_link_name|safe|striptags|replace('-', ' ')|capitalize }}",
+                "image": "https://source.unsplash.com/1280x720/?bee"
+            }
+        }{% endif %}]
+    }
+</script>

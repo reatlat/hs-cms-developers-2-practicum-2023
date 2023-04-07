@@ -11,6 +11,12 @@
 
 {% extends "./layouts/base.html" %}
 
+
+{% block hs_body_open %}
+    {% include "./partials/seo-schema-webpage.html" %}
+{% endblock hs_body_open %}
+
+
 {# Testing config #}
 
 {# By setting the testing variable below to true, you can preview your template changes using a specific HubDB table directly from the design manager. Set the testing variable to false and isAvailableForNewContent in the template annotations to true when you're ready to use this template for a live page. #}

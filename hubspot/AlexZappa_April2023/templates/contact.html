@@ -6,6 +6,11 @@
 -->
 {% extends "./layouts/base.html" %}
 
+{% block hs_body_open %}
+  {% include "./partials/seo-schema-webpage.html" %}
+{% endblock hs_body_open %}
+
+
 {% block body %}
 {% dnd_area "dnd_area"
   label="Main section",

@@ -1,26 +1,21 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: Landing page
+  label: Single page
   screenshotPath: ../images/template-previews/landing-page.png
 -->
 {% extends "./layouts/base.html" %}
 
 
 {% block hs_body_open %}
-  {# We probably dont need that, bbcos LPs ussualy noindex #}
   {% include "./partials/seo-schema-webpage.html" %}
 {% endblock hs_body_open %}
 
 
-{% block header %}
-  {% global_partial path="./partials/header-no-navigation.html" %}
-{% endblock header %}
-
 {% block body %}
 {% dnd_area "dnd_area"
   label="Main section",
-  class="body-container body-container--landing-page"
+  class="body-container body-container--page"
 %}
 
   {# Hero banner #}
@@ -43,6 +38,3 @@
 
 {% end_dnd_area %}
 {% endblock body %}
-
-{% block footer %}
-{% endblock footer %}

@@ -7,6 +7,12 @@
 {% set template_css = "../../css/templates/blog.css" %}
 {% extends "./layouts/base.html" %}
 
+
+{% block hs_body_open %}
+  {% include "./partials/seo-schema-blog.html" %}
+{% endblock hs_body_open %}
+
+
 {% block body %}
 <div class="body-container body-container--blog-post">
 

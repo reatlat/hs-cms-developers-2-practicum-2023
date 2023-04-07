@@ -28,6 +28,7 @@
 
 </div>
 
+{# Set default bg color if not defined #}
 {% if module.style.bg_color.color %}
 	{% set bg_color = module.style.bg_color.color %}
 	{% set bg_opacity = module.style.bg_color.opacity %}
@@ -36,6 +37,7 @@
 	{% set bg_opacity = 100 %}
 {% endif %}
 
+{# Set default text color if not defined #}
 {% if module.style.text_color.color %}
 	{% set text_color = module.style.text_color.color %}
 	{% set text_opacity = module.style.text_color.opacity %}
