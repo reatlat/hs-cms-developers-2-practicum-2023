@@ -1,0 +1,70 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Yet Another page Template to pass Practicum :)
+  screenshotPath: ../images/template-previews/yet-another-page.png
+-->
+
+{% extends "./layouts/base.html" %}
+
+
+{% block hs_body_open %}
+    {# We can pass some code directly after body tag open #}
+{% endblock hs_body_open %}
+
+{% block body %}
+    {# we pass some body DND or something more #}
+
+    {% dnd_area "dnd_area_hero"
+        label="Hero DND Area"
+        class="hero-dnd-area"
+    %}
+
+    {% include_dnd_partial path="../sections/hero-banner.html" %}
+
+    {% end_dnd_area %}
+
+
+    {% dnd_area "dnd_area_main"
+        label="Main DND Area"
+        class="body-container body-container--page"
+    %}
+
+        {# Practicum requirement 2 sections build by me #}
+        {% include_dnd_partial path="../sections/team-cards.html" %}
+
+        {% dnd_section
+            background_color="#C4E4FF",
+            vertical_alignment="MIDDLE"
+        %}
+            {% dnd_module
+                path="@hubspot/rich_text",
+                html="<h2>Lets Rock</h2><p>Welcome to the jungle, we've got fun and games</p><p>We got everything you want honey, we know the names</p><p>We are the people that can find whatever you may need</p><p>If you got the money, honey, we got your disease</p>"
+                offset=0,
+                width=6
+            %}
+            {% end_dnd_module %}
+
+            {% dnd_module
+                path="@hubspot/linked_image",
+                img={
+                "alt": "Stock placeholder image from Unsplash",
+                "loading": "lazy",
+                "max_height": 480,
+                "max_width": 640,
+                "size_type": "auto_custom_max",
+                "src": get_asset_url("../images/trees.jpeg")
+            },
+                offset=6,
+                width=6
+            %}
+            {% end_dnd_module %}
+        {% end_dnd_section %}
+
+        {# Practicum requirement 2 sections build by me #}
+        {% include_dnd_partial path="../sections/clients.html" %}
+
+    {% end_dnd_area %}
+
+{% endblock body %}
+

@@ -1,0 +1,110 @@
+{#
+ # Cats Slider
+ # @package AlexZappa_April2023
+#}
+
+{# Slider main container #}
+<div id="{{ name }}" class="swiper" style="user-select: none">
+
+	{# Additional required wrapper #}
+	<div class="swiper-wrapper" style="padding-bottom:50px">
+		{# Slides #}
+
+		{% for item in module.image_field %}
+			{% if item.src %}
+				<div class="swiper-slide" style="line-height: 0">
+				{% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}"' %}
+				{% if item.size_type == 'auto' %}
+					{% set sizeAttrs = 'width="{{ item.width }}" height="{{ item.height }}" style="max-width: 100%; height: auto;"' %}
+					{% elif item.size_type == 'auto_custom_max' %}
+					{% set sizeAttrs = 'width="{{ item.max_width }}" height="{{ item.max_height }}" style="max-width: 100%; height: auto;"' %}
+				{% endif %}
+				{% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+				<img src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+				</div>
+			{% endif %}
+		{% endfor %}
+	</div>
+
+	{# If we need pagination #}
+	{% if module.slider_settings.pagination %}
+		<div class="swiper-pagination"></div>
+	{% endif %}
+
+	{# If we need navigation buttons #}
+	{% if module.slider_settings.navigation %}
+		<div class="swiper-button-prev"></div>
+		<div class="swiper-button-next"></div>
+	{% endif %}
+
+	{# If we need scrollbar #}
+	{% if module.slider_settings.scrollbar %}
+		<div class="swiper-scrollbar"></div>
+	{% endif %}
+
+</div>
+
+
+
+{% require_js %}
+	<script>
+		window.addEventListener("DOMContentLoaded", function() {
+			var swiperConfig = {
+				{% if module.slider_settings.loop %}
+					loop: true,
+				{% endif %}
+				{% if module.slider_settings.pagination %}
+					pagination: {
+						el: '.swiper-pagination',
+						clickable: true,
+					},
+				{% endif %}
+				{% if module.slider_settings.navigation %}
+					navigation: {
+						nextEl: '.swiper-button-next',
+						prevEl: '.swiper-button-prev',
+					},
+				{% endif %}
+				{% if module.slider_settings.scrollbar %}
+					scrollbar: {
+						el: '.swiper-scrollbar',
+					},
+				{% endif %}
+				autoplay: {
+					delay: {{ module.slider_settings.autoplay_delay || 3000 }},
+					disableOnInteraction: false,
+				},
+				effect: "coverflow",
+				grabCursor: true,
+				centeredSlides: true,
+				slidesPerView: {{ module.slider_settings.slides_per_view || 4 }},
+				speed: {{ module.slider_settings.speed || 300 }},
+				spaceBetween: {{ module.slider_settings.space_between || 0 }},
+				breakpoints: {
+					320: {
+						slidesPerView: 1
+					},
+					480: {
+						slidesPerView: 3,
+					},
+					640: {
+						slidesPerView: 4,
+					}
+				}
+			};
+
+			var swiperInit = function() {
+				var swiper = new Swiper('#{{ name }}', swiperConfig);
+			};
+
+			// set interval to check if swiper is loaded
+			var swiperInterval = setInterval(function() {
+				if (typeof Swiper === 'undefined') {
+					return;
+				}
+				clearInterval(swiperInterval);
+				swiperInit();
+			}, 100);
+		});
+	</script>
+{% end_require_js %}

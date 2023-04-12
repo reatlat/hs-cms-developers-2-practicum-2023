@@ -1,0 +1,18 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Images:SOLID",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 65686170617,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../vendor/css/swiper-bundle.min.css",
+    "name" : "swiper-bundle.min.css"
+  } ],
+  "js_assets" : [ {
+    "autoload" : true,
+    "path" : "../../vendor/js/swiper-bundle.min.js",
+    "name" : "swiper-bundle.min.js"
+  } ],
+  "label" : "Cats Slider",
+  "is_available_for_new_content" : true
+}
