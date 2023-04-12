@@ -1,0 +1,9 @@
+{
+  "global" : false,
+  "inline_help_text" : "This module designed to use it for SVG logotypes, Its critical to set width and height properly, unfortunately HubSpot works not well with SVGs",
+  "icon" : "fontawesome-5.14.0:Joomla%20Logo",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING", "QUOTE" ],
+  "module_id" : 65686170869,
+  "label" : "Modern Logo",
+  "is_available_for_new_content" : true
+}

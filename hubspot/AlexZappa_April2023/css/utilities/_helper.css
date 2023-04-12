@@ -1,5 +1,6 @@
 /* For content that needs to be visually hidden but stay visible for screenreaders */
 
+.sr-only,
 .show-for-sr {
   border: 0 !important;
   clip: rect(0, 0, 0, 0) !important;

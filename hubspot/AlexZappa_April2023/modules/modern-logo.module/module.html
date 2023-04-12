@@ -1,0 +1,18 @@
+{#
+ # Modern Logo
+ # @package AlexZappa_April2023
+ #}
+
+<a href="/" 
+   id="hs-link-site_logo_hs_logo_widget" 
+   style="border-width:0px;border:0px;">
+  <img src="{{ module.image_field.src || brand_settings.primaryLogo.link }}"
+       class="hs-image-widget "
+       style="width:{{ module.logo_width }}px;height:{{ module.logo_height }}px;border-width:0px;border:0px;" 
+       width="{{ module.logo_width }}" 
+       height="{{ module.logo_height }}"
+       alt="{{ site_settings.company_name || module.image_field.alt }}"
+       title="{{ site_settings.company_name || module.image_field.alt }}">
+  <span class="sr-only">{{ site_settings.company_name || module.image_field.alt }}</span>
+</a>
+
